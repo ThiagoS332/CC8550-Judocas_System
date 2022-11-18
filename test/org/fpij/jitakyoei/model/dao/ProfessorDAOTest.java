@@ -25,19 +25,12 @@ public class ProfessorDAOTest {
 	private static Endereco endereco;
     private static Endereco endereco_1;
     private static Endereco endereco_2;
-	// private static Filiado f1;
 	private static Filiado filiadoProf;
 	private static Professor professor;
 	
 	@BeforeClass
 	public static void setUp(){
 		DatabaseManager.setEnviroment(DatabaseManager.TEST);
-		// f1 = new Filiado();
-		// f1.setNome("Aécio");
-		// f1.setCpf("036.464.453-27");
-		// f1.setDataNascimento(new Date());
-		// f1.setDataCadastro(new Date());
-		// f1.setId(1332L);
 		
 		endereco = new Endereco();
 		endereco.setBairro("Dirceu");
