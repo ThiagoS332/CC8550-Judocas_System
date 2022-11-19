@@ -1,0 +1,4 @@
+test\org\fpij\jitakyoei\model\dao\FiliadoDAOTest.class
+test\org\fpij\jitakyoei\model\dao\AlunoDaoTest.class
+test\org\fpij\jitakyoei\model\ModelIntegrationTests.class
+test\org\fpij\jitakyoei\model\dao\ProfessorDAOTest.class
