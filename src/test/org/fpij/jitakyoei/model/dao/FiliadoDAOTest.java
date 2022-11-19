@@ -28,7 +28,9 @@ public class FiliadoDAOTest {
     private static Rg rg;
     private static Faixa faixa_1;
     private static Faixa faixa_2;
+	private static Faixa faixa_3;
     private static List<Faixa> faixas;
+	private static List<Faixa> faixas_2;
 	
 	@BeforeAll
 	public static void setUp(){
@@ -50,7 +52,7 @@ public class FiliadoDAOTest {
         faixa_1.setDataEntrega(new Date());
 
         faixa_2 = new Faixa();
-		faixa_1.setCor(CorFaixa.CINZA);
+		faixa_2.setCor(CorFaixa.CINZA);
         faixa_2.setDataEntrega(new Date());
 
         faixas = new ArrayList<>();
@@ -98,23 +100,76 @@ public class FiliadoDAOTest {
 	}
 	
 	@Test
-	public void updateFiliado() throws Exception{
+	public void testUpdateFiliado() throws Exception{
 		clearDatabase();
 		assertEquals(0, filiadoDao.list().size());
 		
 		filiadoDao.save(filiado);
 		assertEquals(1, filiadoDao.list().size());
 		assertEquals("Dan", filiadoDao.get(filiado).getNome());
+
+		faixa_3 = new Faixa();
+		faixa_3.setCor(CorFaixa.AZUL);
+        faixa_3.setDataEntrega(new Date());
+
+		faixas_2 = new ArrayList<>();
+
+		faixas_2.add(faixa_1);
+		faixas_2.add(faixa_2);
+		faixas_2.add(faixa_3);
 		
 		Filiado f1 = filiadoDao.get(filiado);
 		f1.setNome("TesteUpdate");
         f1.getEndereco().setRua("Rua TesteUpdate");
+		f1.setFaixas(faixas_2);
+		f1.setObservacoes("TesteObservacao");
 		filiadoDao.save(f1);
 		
 		Filiado f2 = filiadoDao.get(f1);
 		assertEquals("TesteUpdate", f2.getNome());
         assertEquals("Rua TesteUpdate", f2.getEndereco().getRua());
+		assertEquals("Azul", f2.getFaixas().get(3).getCor().getDescricao());
+		assertEquals("TesteObservacao", f2.getObservacoes());
 		assertEquals(1, filiadoDao.list().size());
+	}
+
+	@Test
+	public void testCopyFiliado() throws Exception{
+		clearDatabase();
+		assertEquals(0, filiadoDao.list().size());
+		
+		filiadoDao.save(filiado);
+		assertEquals(1, filiadoDao.list().size());
+		assertEquals("036.464.453-27", filiadoDao.get(filiado).getCpf());
+		assertEquals("dan.ific@da.co", filiadoDao.get(filiado).getEmail());
+		assertEquals("Cinza", filiadoDao.get(filiado).getFaixas().get(1).getCor().getDescricao());
+		assertEquals("Teresina", filiadoDao.get(filiado).getEndereco().getCidade());
+
+		faixa_3 = new Faixa();
+		faixa_3.setCor(CorFaixa.AZUL);
+        faixa_3.setDataEntrega(new Date());
+
+		faixas_2 = new ArrayList<>();
+
+		faixas_2.add(faixa_1);
+		faixas_2.add(faixa_2);
+		faixas_2.add(faixa_3);
+
+		Filiado f1 = filiadoDao.get(filiado);
+		f1.setNome("000.000.016-31");
+		f1.setEmail("email.email@email.com");
+		f1.setFaixas(faixas_2);
+		f1.getEndereco().setCidade("TesteCidade");
+		filiadoDao.save(f1);
+
+		Filiado f2 = filiadoDao.get(filiado);
+		f2.copyProperties(filiadoDao.get(filiado));
+		filiadoDao.save(f2);
+		assertEquals(1, filiadoDao.list().size());
+		assertEquals("036.464.453-27", filiadoDao.get(filiado).getCpf());
+		assertEquals("dan.ific@da.co", filiadoDao.get(filiado).getEmail());
+		assertEquals("Cinza", filiadoDao.get(filiado).getFaixas().get(1).getCor().getDescricao());
+		assertEquals("Teresina", filiadoDao.get(filiado).getEndereco().getCidade());
 	}
 
     @AfterAll

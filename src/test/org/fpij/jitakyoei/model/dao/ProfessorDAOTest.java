@@ -112,7 +112,7 @@ public class ProfessorDAOTest {
 	}
 	
 	@Test
-	public void updateProfessor() throws Exception{
+	public void testUpdateProfessor() throws Exception{
 		clearDatabase();
 		assertEquals(0, professorDao.list().size());
 		

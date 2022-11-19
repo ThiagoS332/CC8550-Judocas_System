@@ -95,7 +95,7 @@ public class AlunoDaoTest {
 	}
 	
 	@Test
-	public void updateAluno() throws Exception{
+	public void testUpdateAluno() throws Exception{
 		clearDatabase();
 		assertEquals(0, alunoDao.list().size());
 		
