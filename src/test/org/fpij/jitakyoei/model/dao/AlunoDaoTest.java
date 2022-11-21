@@ -38,7 +38,7 @@ public class AlunoDaoTest {
 		DatabaseManager.setEnviroment(DatabaseManager.TEST);
 		f1 = new Filiado();
 		f1.setNome("Aécio");
-		f1.setCpf("036.464.453-27");
+		f1.setCpf("03646445327");
 		f1.setDataNascimento(new Date());
 		f1.setDataCadastro(new Date());
 		f1.setId(1332L);
@@ -52,7 +52,7 @@ public class AlunoDaoTest {
 		
 		filiadoProf = new Filiado();
 		filiadoProf.setNome("Professor");
-		filiadoProf.setCpf("036.464.453-27");
+		filiadoProf.setCpf("03646445327");
 		filiadoProf.setDataNascimento(new Date());
 		filiadoProf.setDataCadastro(new Date());
 		filiadoProf.setId(3332L);
@@ -88,7 +88,7 @@ public class AlunoDaoTest {
 		clearDatabase();
 		
 		alunoDao.save(aluno);
-		assertEquals("036.464.453-27", alunoDao.get(aluno).getFiliado().getCpf());
+		assertEquals("03646445327", alunoDao.get(aluno).getFiliado().getCpf());
 		assertEquals("Aécio", alunoDao.get(aluno).getFiliado().getNome());
 		assertEquals("Professor", alunoDao.get(aluno).getProfessor().getFiliado().getNome());
 		assertEquals("Dirceu", alunoDao.get(aluno).getProfessor().getFiliado().getEndereco().getBairro());
@@ -118,7 +118,7 @@ public class AlunoDaoTest {
 
 		f1 = new Filiado();
 		f1.setNome("Aécio");
-		f1.setCpf("036.464.453-27");
+		f1.setCpf("03646445327");
 		f1.setDataNascimento(new Date());
 		f1.setDataCadastro(new Date());
 		f1.setId(1332L);
@@ -132,7 +132,7 @@ public class AlunoDaoTest {
 		
 		filiadoProf = new Filiado();
 		filiadoProf.setNome("Professor");
-		filiadoProf.setCpf("036.464.453-27");
+		filiadoProf.setCpf("03646445327");
 		filiadoProf.setDataNascimento(new Date());
 		filiadoProf.setDataCadastro(new Date());
 		filiadoProf.setId(3332L);
@@ -202,7 +202,7 @@ public class AlunoDaoTest {
 		
 		List<Aluno> result = alunoDao.search(a);
 		assertEquals(1, result.size());
-		assertEquals("036.464.453-27", result.get(0).getFiliado().getCpf());
+		assertEquals("03646445327", result.get(0).getFiliado().getCpf());
 		
 		clearDatabase();
 		assertEquals(0, alunoDao.search(a).size());

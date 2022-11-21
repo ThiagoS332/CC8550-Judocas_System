@@ -17,10 +17,15 @@ import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
+import javax.swing.text.PlainDocument;
 
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
 import com.toedter.calendar.JDateChooser;
+
+import main.java.org.fpij.jitakyoei.util.JTextIntFilter;
+import main.java.org.fpij.jitakyoei.util.JTextLengthLimiter;
+import main.java.org.fpij.jitakyoei.util.JTextIntLimiterFilter;
 
 /**
  * @author wansoul
@@ -156,6 +161,8 @@ public class FiliadoPanel extends JPanel {
 		label12.setText("CPF:");
 		label12.setName("label12");
 		add(label12, cc.xy(6, 4));
+		cpfDoc = (PlainDocument) cpf.getDocument();
+		cpfDoc.setDocumentFilter(new JTextIntLimiterFilter(11));
 
 		//---- cpf ----
 		cpf.setName("cpf");
@@ -183,6 +190,8 @@ public class FiliadoPanel extends JPanel {
 		label3.setText("RG:");
 		label3.setName("label3");
 		add(label3, cc.xy(2, 8));
+		rgDoc = (PlainDocument) rg.getDocument();
+		rgDoc.setDocumentFilter(new JTextIntLimiterFilter(9));
 
 		//---- rg ----
 		rg.setName("rg");
@@ -325,12 +334,14 @@ public class FiliadoPanel extends JPanel {
 	private JTextField registroCbj;
 	private JLabel label12;
 	private JTextField cpf;
+	private PlainDocument cpfDoc;
 	private JLabel label6;
 	private JTextField email;
 	private JLabel label2;
 	private JDateChooser dataNascimentoDataChooser;
 	private JLabel label3;
 	private JTextField rg;
+	private PlainDocument rgDoc;
 	private JLabel label4;
 	private JTextField orgaoExpedidor;
 	private JLabel label10;
