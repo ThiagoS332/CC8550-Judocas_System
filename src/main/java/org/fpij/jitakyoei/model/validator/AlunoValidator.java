@@ -2,15 +2,10 @@ package main.java.org.fpij.jitakyoei.model.validator;
 
 import main.java.org.fpij.jitakyoei.model.beans.Aluno;
 
-public class AlunoValidator implements Validator<Aluno>{
+public class AlunoValidator implements Validator<Aluno> {
 
-	private RgValidator rg = new RgValidator();
-
-	// private void init(){
-	// 	rg = new RgValidator();
-	// }
-
-	// rg.validate(aluno.getFiliado().getRg())
+	private RgValidator rgVal = new RgValidator();
+	private EnderecoValidator enderecoVal = new EnderecoValidator();
 
 	public boolean validate(Aluno aluno) {
 		if(!aluno.getFiliado().getCpf().isEmpty() &&
@@ -19,8 +14,8 @@ public class AlunoValidator implements Validator<Aluno>{
 			!aluno.getFiliado().getEmail().isEmpty() &&
 			!aluno.getFiliado().getNome().isEmpty() &&
 			!aluno.getFiliado().getTelefone1().isEmpty() &&
-			(aluno.getFiliado().getTelefone1().length() == 13 ||
-			aluno.getFiliado().getTelefone1().length() == 14))
+			rgVal.validate(aluno.getFiliado().getRg()) &&
+			enderecoVal.validate(aluno.getFiliado().getEndereco()))
 		{
 			return true;
 		}

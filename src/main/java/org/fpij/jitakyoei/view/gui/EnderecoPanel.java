@@ -8,11 +8,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
+import javax.swing.text.PlainDocument;
 
 import net.java.dev.genesis.annotation.ViewHandler;
 
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
+
+import main.java.org.fpij.jitakyoei.util.JTextIntLimiterFilter;
 
 /**
  * @author wansoul
@@ -89,6 +92,8 @@ public class EnderecoPanel extends JPanel {
 		//---- numero ----
 		numero.setName("numero");
 		add(numero, cc.xy(11, 1));
+		numDoc = (PlainDocument) numero.getDocument();
+		numDoc.setDocumentFilter(new JTextIntLimiterFilter(6));
 
 		//---- label3 ----
 		label3.setText("Bairro:");
@@ -121,6 +126,8 @@ public class EnderecoPanel extends JPanel {
 		label6.setText("CEP:");
 		label6.setName("label6");
 		add(label6, cc.xy(5, 5));
+		cepDoc = (PlainDocument) cep.getDocument();
+		cepDoc.setDocumentFilter(new JTextIntLimiterFilter(8));
 
 		//---- cep ----
 		cep.setName("cep");
@@ -133,6 +140,7 @@ public class EnderecoPanel extends JPanel {
 	private JTextField rua;
 	private JLabel label2;
 	private JTextField numero;
+	private PlainDocument numDoc;
 	private JLabel label3;
 	private JTextField bairro;
 	private JLabel label4;
@@ -141,5 +149,6 @@ public class EnderecoPanel extends JPanel {
 	private JTextField estado;
 	private JLabel label6;
 	private JTextField cep;
+	private PlainDocument cepDoc;
 	// JFormDesigner - End of variables declaration  //GEN-END:variables
 }
