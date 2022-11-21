@@ -44,7 +44,7 @@ public class ProfessorDAOTest {
 		
 		filiadoProf = new Filiado();
 		filiadoProf.setNome("Professor");
-		filiadoProf.setCpf("036.464.453-27");
+		filiadoProf.setCpf("03646445327");
 		filiadoProf.setDataNascimento(new Date());
 		filiadoProf.setDataCadastro(new Date());
 		filiadoProf.setId(3332L);
@@ -105,7 +105,7 @@ public class ProfessorDAOTest {
 		clearDatabase();
 		
 		professorDao.save(professor);
-		assertEquals("036.464.453-27", professorDao.get(professor).getFiliado().getCpf());
+		assertEquals("03646445327", professorDao.get(professor).getFiliado().getCpf());
 		assertEquals("Professor", professorDao.get(professor).getFiliado().getNome());
 		assertEquals("Academia 1", professorDao.get(professor).getEntidades().get(0).getNome());
 		assertEquals("Guilhermina", professorDao.get(professor).getEntidades().get(2).getEndereco().getBairro());

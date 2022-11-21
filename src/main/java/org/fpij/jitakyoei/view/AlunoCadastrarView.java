@@ -10,6 +10,7 @@ import main.java.org.fpij.jitakyoei.facade.AppFacade;
 import main.java.org.fpij.jitakyoei.model.beans.Aluno;
 import main.java.org.fpij.jitakyoei.model.validator.AlunoValidator;
 import main.java.org.fpij.jitakyoei.view.forms.AlunoForm;
+// import main.java.org.fpij.jitakyoei.model.validator.RgValidator;
 
 import main.java.org.fpij.jitakyoei.view.gui.AlunoCadastrarPanel;
 
@@ -17,7 +18,7 @@ public class AlunoCadastrarView implements ViewComponent {
 
 	private AlunoCadastrarPanel gui;
 	private AlunoForm alunoForm;
-	private AlunoValidator alunoValidator;
+	// private AlunoValidator alunoValidator;
 	private AppFacade facade;
 	private MainAppView parent;
 
@@ -50,8 +51,11 @@ public class AlunoCadastrarView implements ViewComponent {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			AlunoValidator alunoValidator = new AlunoValidator();
+			
+			// RgValidator rgValidator = new RgValidator();
 			Aluno aluno = alunoForm.getAluno();
 			try {
+				// && rgValidator.validate(aluno.getFiliado().getRg())
 				if(alunoValidator.validate(aluno)){
 					facade.createAluno(aluno);
 					JOptionPane.showMessageDialog(gui, "Aluno cadastrado com sucesso!");

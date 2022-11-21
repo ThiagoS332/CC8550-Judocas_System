@@ -8,7 +8,6 @@ import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
@@ -18,10 +17,6 @@ import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
-import javax.swing.text.AttributeSet;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.Document;
-import javax.swing.text.DocumentFilter;
 import javax.swing.text.PlainDocument;
 
 import com.jgoodies.forms.layout.CellConstraints;
@@ -29,6 +24,8 @@ import com.jgoodies.forms.layout.FormLayout;
 import com.toedter.calendar.JDateChooser;
 
 import main.java.org.fpij.jitakyoei.util.JTextIntFilter;
+import main.java.org.fpij.jitakyoei.util.JTextLengthLimiter;
+import main.java.org.fpij.jitakyoei.util.JTextIntLimiterFilter;
 
 /**
  * @author wansoul
@@ -165,7 +162,7 @@ public class FiliadoPanel extends JPanel {
 		label12.setName("label12");
 		add(label12, cc.xy(6, 4));
 		cpfDoc = (PlainDocument) cpf.getDocument();
-		cpfDoc.setDocumentFilter(new JTextIntFilter());
+		cpfDoc.setDocumentFilter(new JTextIntLimiterFilter(11));
 
 		//---- cpf ----
 		cpf.setName("cpf");
@@ -194,7 +191,7 @@ public class FiliadoPanel extends JPanel {
 		label3.setName("label3");
 		add(label3, cc.xy(2, 8));
 		rgDoc = (PlainDocument) rg.getDocument();
-		rgDoc.setDocumentFilter(new JTextIntFilter());
+		rgDoc.setDocumentFilter(new JTextIntLimiterFilter(9));
 
 		//---- rg ----
 		rg.setName("rg");
