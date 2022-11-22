@@ -87,7 +87,7 @@ public class MainAppView implements AppView {
 			Aluno alunoSelecionado = buscarView.getSelectedAluno();
 			if (alunoSelecionado != null) {
 				AlunoAtualizarView atualizarView = new AlunoAtualizarView(this, alunoSelecionado);
-				displayTabPanel(atualizarView, "Alterar Aluno");
+				displayTabPanel(atualizarView, "Atualizar Aluno");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -150,7 +150,7 @@ public class MainAppView implements AppView {
 			Professor professorSelecionado = buscarView.getSelectedProfessor();
 			if (professorSelecionado != null) {
 				ProfessorAtualizarView atualizarView = new ProfessorAtualizarView(this, professorSelecionado);
-				displayTabPanel(atualizarView, "Alterar Professor");
+				displayTabPanel(atualizarView, "Atualizar Professor");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -197,7 +197,7 @@ public class MainAppView implements AppView {
 		Entidade entidadeSelecionada = buscarView.getSelectedEntidade();
 		if (entidadeSelecionada != null) {
 			EntidadeAtualizarView atualizarView = new EntidadeAtualizarView(this, entidadeSelecionada);
-			displayTabPanel(atualizarView, "Alterar Entidade");
+			displayTabPanel(atualizarView, "Atualizar Entidade");
 		}
 	}
 
@@ -208,7 +208,7 @@ public class MainAppView implements AppView {
 
 	@Action
 	public void buscarEntidadeMenuItem() {
-		displayTabPanel(new EntidadeBuscarView(), "Busca de Entidade");
+		displayTabPanel(new EntidadeBuscarView(), "Buscar Entidade");
 	}
 
 	@Action

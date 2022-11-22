@@ -49,6 +49,7 @@ public class EntidadeCadastrarView implements ViewComponent {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			try {
+				entidadeValidator = new EntidadeValidator();
 				Entidade entidade = entidadeForm.getEntidade();
 
 				if(entidadeValidator.validate(entidade)){

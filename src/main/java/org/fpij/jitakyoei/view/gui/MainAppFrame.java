@@ -91,7 +91,8 @@ public class MainAppFrame extends JFrame {
 		//======== this ========
 		setTitle("JitaKyoei - Federa\u00e7\u00e3o Piauiense de Jud\u00f4");
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		setIconImage(new ImageIcon("C:\\Documents and Settings\\User\\Meus documentos\\[ADS-IV]\\AOO\\Trabalho Final\\icon-logo.png").getImage());
+		// setIconImage(new ImageIcon("C:\\Documents and Settings\\User\\Meus documentos\\[ADS-IV]\\AOO\\Trabalho Final\\icon-logo.png").getImage());
+		setIconImage(new ImageIcon("F:\\Arquivos\\FEI\\8\\CC8550\\Projeto\\CC8550-Judocas_System\\src\\main\\imgs\\icones\\icon_16x16\\icon-logo.png").getImage());
 		setName("this");
 		addWindowListener(new WindowAdapter() {
 			@Override
@@ -162,7 +163,7 @@ public class MainAppFrame extends JFrame {
 
 			//======== menu5 ========
 			{
-				menu5.setText("Alterar");
+				menu5.setText("Atualizar");
 				menu5.setName("menu5");
 
 				//---- alterarAlunoMenuItem ----
@@ -238,13 +239,13 @@ public class MainAppFrame extends JFrame {
 
 			//---- cadastrarAlunoIcon ----
 			cadastrarAlunoIcon.setIcon(new ImageIcon(getClass().getResource("/aluno_add.png")));
-			cadastrarAlunoIcon.setToolTipText("Novo Aluno");
+			cadastrarAlunoIcon.setToolTipText("Cadastrar Aluno");
 			cadastrarAlunoIcon.setName("cadastrarAlunoIcon");
 			mainToolBar.add(cadastrarAlunoIcon);
 
 			//---- alterarAlunoIcon ----
 			alterarAlunoIcon.setIcon(new ImageIcon(getClass().getResource("/aluno_edit.png")));
-			alterarAlunoIcon.setToolTipText("Editar Aluno");
+			alterarAlunoIcon.setToolTipText("Atualizar Aluno");
 			alterarAlunoIcon.setName("alterarAlunoIcon");
 			mainToolBar.add(alterarAlunoIcon);
 
@@ -257,13 +258,13 @@ public class MainAppFrame extends JFrame {
 
 			//---- cadastrarProfessorIcon ----
 			cadastrarProfessorIcon.setIcon(new ImageIcon(getClass().getResource("/teacher_add.png")));
-			cadastrarProfessorIcon.setToolTipText("Novo Professor");
+			cadastrarProfessorIcon.setToolTipText("Cadastrar Professor");
 			cadastrarProfessorIcon.setName("cadastrarProfessorIcon");
 			mainToolBar.add(cadastrarProfessorIcon);
 
 			//---- alterarProfessorIcon ----
 			alterarProfessorIcon.setIcon(new ImageIcon(getClass().getResource("/teacher_edit.png")));
-			alterarProfessorIcon.setToolTipText("Editar Professor");
+			alterarProfessorIcon.setToolTipText("Atualizar Professor");
 			alterarProfessorIcon.setName("alterarProfessorIcon");
 			mainToolBar.add(alterarProfessorIcon);
 
@@ -276,13 +277,13 @@ public class MainAppFrame extends JFrame {
 
 			//---- cadastrarEntidadeIcon ----
 			cadastrarEntidadeIcon.setIcon(new ImageIcon(getClass().getResource("/entidade_add.png")));
-			cadastrarEntidadeIcon.setToolTipText("Nova Entidade");
+			cadastrarEntidadeIcon.setToolTipText("Cadastrar Entidade");
 			cadastrarEntidadeIcon.setName("cadastrarEntidadeIcon");
 			mainToolBar.add(cadastrarEntidadeIcon);
 
 			//---- alterarEntidadeIcon ----
 			alterarEntidadeIcon.setIcon(new ImageIcon(getClass().getResource("/entidade_edit.png")));
-			alterarEntidadeIcon.setToolTipText("Editar Entidade");
+			alterarEntidadeIcon.setToolTipText("Atualizar Entidade");
 			alterarEntidadeIcon.setName("alterarEntidadeIcon");
 			mainToolBar.add(alterarEntidadeIcon);
 
