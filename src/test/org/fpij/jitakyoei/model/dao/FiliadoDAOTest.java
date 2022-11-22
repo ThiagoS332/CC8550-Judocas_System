@@ -38,7 +38,7 @@ public class FiliadoDAOTest {
 
         endereco = new Endereco();
 		endereco.setBairro("Dirceu");
-		endereco.setCep("64078-213");
+		endereco.setCep("64078213");
 		endereco.setCidade("Teresina");
 		endereco.setEstado("PI");
 		endereco.setRua("Rua Des. Berilo Mota");
@@ -56,7 +56,6 @@ public class FiliadoDAOTest {
         faixa_2.setDataEntrega(new Date());
 
         faixas = new ArrayList<>();
-
         faixas.add(faixa_1);
         faixas.add(faixa_2);
 		

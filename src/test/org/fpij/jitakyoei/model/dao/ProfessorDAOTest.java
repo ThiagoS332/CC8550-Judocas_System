@@ -37,7 +37,7 @@ public class ProfessorDAOTest {
 		
 		endereco = new Endereco();
 		endereco.setBairro("Dirceu");
-		endereco.setCep("64078-213");
+		endereco.setCep("64078213");
 		endereco.setCidade("Teresina");
 		endereco.setEstado("PI");
 		endereco.setRua("Rua Des. Berilo Mota");
@@ -57,7 +57,7 @@ public class ProfessorDAOTest {
 
         endereco_1 = new Endereco();
 		endereco_1.setBairro("Amambai");
-		endereco_1.setCep("79005-671");
+		endereco_1.setCep("79005671");
 		endereco_1.setCidade("Campo Grande");
 		endereco_1.setEstado("MS");
 		endereco_1.setRua("Avenida das Bandeiras");
@@ -69,7 +69,7 @@ public class ProfessorDAOTest {
 
         endereco_2 = new Endereco();
 		endereco_2.setBairro("Guilhermina");
-		endereco_2.setCep("02052-001");
+		endereco_2.setCep("02052001");
 		endereco_2.setCidade("São Paulo");
 		endereco_2.setEstado("SP");
 		endereco_2.setRua("Rua Doze de Setembro");
@@ -80,7 +80,6 @@ public class ProfessorDAOTest {
 		entidade_2.setTelefone1("(011)9984-2147");
 
         entidades = new ArrayList<>();
-
         entidades.add(entidade);
         entidades.add(entidade_1);
         entidades.add(entidade_2);
