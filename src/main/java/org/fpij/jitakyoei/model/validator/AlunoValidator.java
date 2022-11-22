@@ -13,7 +13,7 @@ public class AlunoValidator implements Validator<Aluno> {
 			aluno.getFiliado().getDataNascimento() != null &&
 			!aluno.getFiliado().getEmail().isEmpty() &&
 			!aluno.getFiliado().getNome().isEmpty() &&
-			!aluno.getFiliado().getTelefone1().isEmpty() &&
+			(!aluno.getFiliado().getTelefone1().isEmpty() || !aluno.getFiliado().getTelefone2().isEmpty()) &&
 			rgVal.validate(aluno.getFiliado().getRg()) &&
 			enderecoVal.validate(aluno.getFiliado().getEndereco()))
 		{
