@@ -61,7 +61,7 @@ public class EntidadePanel extends JPanel {
 			"fill:default, 3*($lgap, default)"));
 
 		//---- label1 ----
-		label1.setText("Entidade:");
+		label1.setText("Nome da Entidade:");
 		label1.setName("label1");
 		add(label1, cc.xy(1, 1));
 
