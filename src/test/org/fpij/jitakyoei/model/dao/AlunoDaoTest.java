@@ -30,12 +30,6 @@ public class AlunoDaoTest {
 	private static Rg rgAluno;
 	private static Filiado filiadoAluno;
 
-	// private static Aluno aluno_1;
-	// private static Aluno aluno_2;
-	// private static Aluno aluno_3;
-	// private static Aluno aluno_4;
-	// private static Aluno aluno_5;
-
 	private static Entidade entidade;
 	private static Endereco enderecoEntidade;
 	private static Entidade entidade_1;
