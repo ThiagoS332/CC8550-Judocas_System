@@ -7,9 +7,12 @@ package main.java.org.fpij.jitakyoei.view.gui;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.text.PlainDocument;
 
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
+
+import main.java.org.fpij.jitakyoei.util.JTextIntLimiterFilter;
 
 /**
  * @author wansoul
@@ -61,7 +64,7 @@ public class EntidadePanel extends JPanel {
 			"fill:default, 3*($lgap, default)"));
 
 		//---- label1 ----
-		label1.setText("Nome da Entidade:");
+		label1.setText("Entidade:");
 		label1.setName("label1");
 		add(label1, cc.xy(1, 1));
 
@@ -73,6 +76,8 @@ public class EntidadePanel extends JPanel {
 		label2.setText("CNPJ:");
 		label2.setName("label2");
 		add(label2, cc.xy(1, 3));
+		cnpjDoc = (PlainDocument) cnpj.getDocument();
+		cnpjDoc.setDocumentFilter(new JTextIntLimiterFilter(14));
 
 		//---- cnpj ----
 		cnpj.setName("cnpj");
@@ -99,6 +104,7 @@ public class EntidadePanel extends JPanel {
 		//---- enderecoPanel ----
 		enderecoPanel.setName("enderecoPanel");
 		add(enderecoPanel, cc.xywh(1, 7, 7, 1));
+
 		// JFormDesigner - End of component initialization  //GEN-END:initComponents
 	}
 
@@ -107,6 +113,7 @@ public class EntidadePanel extends JPanel {
 	private JTextField nome;
 	private JLabel label2;
 	private JTextField cnpj;
+	private PlainDocument cnpjDoc;
 	private JLabel label3;
 	private JTextField telefone1;
 	private JLabel label4;
