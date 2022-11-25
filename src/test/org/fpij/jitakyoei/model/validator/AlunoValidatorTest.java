@@ -394,7 +394,7 @@ public class AlunoValidatorTest {
 
 		alunoTest.getFiliado().setTelefone1("");
 		
-		assertEquals(false, alunoValidator.validate(alunoTest));
+		assertEquals(true, alunoValidator.validate(alunoTest));
 	}
 
 	@Test
@@ -403,7 +403,7 @@ public class AlunoValidatorTest {
 
 		alunoTest.getFiliado().setTelefone2("");
 		
-		assertEquals(false, alunoValidator.validate(alunoTest));
+		assertEquals(true, alunoValidator.validate(alunoTest));
 	}
 
 	@Test
