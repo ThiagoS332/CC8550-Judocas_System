@@ -15,6 +15,7 @@ import net.java.dev.genesis.annotation.ViewHandler;
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
 
+import main.java.org.fpij.jitakyoei.util.JTextLengthLimiter;
 import main.java.org.fpij.jitakyoei.util.JTextIntLimiterFilter;
 
 /**
@@ -117,6 +118,8 @@ public class EnderecoPanel extends JPanel {
 		label5.setText("Estado:");
 		label5.setName("label5");
 		add(label5, cc.xy(1, 5));
+		estadoDoc = (PlainDocument) estado.getDocument();
+		estadoDoc.setDocumentFilter(new JTextLengthLimiter(2));
 
 		//---- estado ----
 		estado.setName("estado");
@@ -147,6 +150,7 @@ public class EnderecoPanel extends JPanel {
 	private JTextField cidade;
 	private JLabel label5;
 	private JTextField estado;
+	private PlainDocument estadoDoc;
 	private JLabel label6;
 	private JTextField cep;
 	private PlainDocument cepDoc;
