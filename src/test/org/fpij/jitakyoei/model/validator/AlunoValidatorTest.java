@@ -144,10 +144,10 @@ public class AlunoValidatorTest {
 		filiadoProf.setDataNascimento(new Date());
 		filiadoProf.setEmail("professor@email.com");
 		filiadoProf.setEndereco(enderecoProfessor);
-		filiadoAluno.setFaixas(faixasProfessor);
+		filiadoProf.setFaixas(faixasProfessor);
 		filiadoProf.setId(3332L);
 		filiadoProf.setNome("Roberto");
-		filiadoAluno.setObservacoes("");
+		filiadoProf.setObservacoes("");
 		filiadoProf.setRegistroCbj("13");
 		filiadoProf.setRg(rgProfessor);
 		filiadoProf.setTelefone1("(086)1234-9876");
